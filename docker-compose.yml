@@ -1,0 +1,22 @@
+services:
+  container1:
+    image: balajisukumaran7/adv-cloud-computing:assignment1-container-one
+    volumes:
+      - .:/usr/src/container1
+    ports:
+      - 6000:6000
+    networks:
+      - docker-assignment-network
+
+  container2:
+    image: balajisukumaran7/adv-cloud-computing:assignment1-container-two
+    volumes:
+      - .:/usr/src/container2
+    ports:
+      - 8000:8000
+    networks:
+      - docker-assignment-network
+
+networks:
+  docker-assignment-network:
+    driver: bridge
